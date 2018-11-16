@@ -1,0 +1,8 @@
+services:
+  sql_entity_condition_acronyms.entity.query.sql:
+    decorates: entity.query.sql
+    class: Drupal\sql_entity_condition_acronyms\Entity\Query\Sql\QueryFactory
+    arguments: ['@database']
+    public: false
+    tags:
+      - { name: backend_overridable }

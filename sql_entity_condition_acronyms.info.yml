@@ -1,0 +1,4 @@
+name: 'Sql Entity Condition Acronyms'
+description: 'Drupal Micro-Module for Acronyms in Query Conditions.'
+type: module
+core: 8.x
