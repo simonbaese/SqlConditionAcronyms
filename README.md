@@ -25,7 +25,7 @@ $nids = $this->entityTypeManager->getStorage('node')->getQuery()
 ```
 
 # Setup
-The module can simply be installed through the Drupal interface. Then you should define the replacements in `src/Entity/Query/Sql/Condition.php`. For the prior example as follows:
+The module can simply be installed through the Drupal interface. After the installation you should rebuild the cache. Then you should define the replacements in `src/Entity/Query/Sql/Condition.php`. For the prior example as follows:
 
 ```
 if (stripos($field, 'fa$') !== FALSE) {
