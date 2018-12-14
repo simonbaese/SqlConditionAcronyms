@@ -13,13 +13,20 @@ class Condition extends BaseCondition {
    * {@inheritdoc}
    */
   public function condition($field, $value = NULL, $operator = NULL, $langcode = NULL) {
-
+		
     // Replace acronym for fields.
-    if (stripos($field, 'f$') !== FALSE) {
+    if (is_string($field) && stripos($field, 'f$') !== FALSE) {
       $field = str_ireplace('f$', 'field_', $field);
     }
 
-    parent::condition($field, $value, $operator, $langcode);
+    $this->conditions[] = [
+      'field' => $field,
+      'value' => $value,
+      'operator' => $operator,
+      'langcode' => $langcode,
+    ];
+
+    return $this;
   }
 
 }
