@@ -19,12 +19,8 @@ class Condition extends BaseCondition {
       $field = str_ireplace('f$', 'field_', $field);
     }
 
-    $this->conditions[] = [
-      'field' => $field,
-      'value' => $value,
-      'operator' => $operator,
-      'langcode' => $langcode,
-    ];
+    // Call parent condition.
+    parent::condition($field, $value, $operator, $langcode);
 
     return $this;
   }
